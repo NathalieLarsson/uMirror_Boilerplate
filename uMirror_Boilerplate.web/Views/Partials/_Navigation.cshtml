@@ -3,11 +3,16 @@
     var root = Model.Content.AncestorOrSelf(1);
 }
 
-<ul>
-    @foreach (var page in root.Children.Where("Visible"))
-    {
-        <li class="@(page.IsAncestorOrSelf(CurrentPage) ? "current" : null)">
-            <a href="@page.Url">@page.Name</a>
-        </li>
-    }
-</ul>
+<nav>
+	<ul>
+		<li class="@(root.IsAncestorOrSelf(Model.Content) ? "current" : null)">
+			<a href="@root.Url">Home</a>
+		</li>
+		@foreach (var page in root.Children.Where("Visible"))
+		{
+			<li class="@(page.IsAncestorOrSelf(Model.Content) ? "current" : null)">
+				<a href="@page.Url">@page.Name</a>
+			</li>
+		}
+	</ul>
+</nav>

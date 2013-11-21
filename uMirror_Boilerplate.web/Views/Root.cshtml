@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    @Html.Partial("navigation")
+    @Html.Partial("_Navigation")
 
     <h1>@{Model.Content.GetPropertyValue<string>("pageHeading");}</h1>
     @RenderBody()
