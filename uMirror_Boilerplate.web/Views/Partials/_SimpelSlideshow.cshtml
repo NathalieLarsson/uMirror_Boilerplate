@@ -1,1 +1,22 @@
-﻿
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	<p>Simpel slideshow - TODO</p>		 
+	
+	@* Simpel slieshow - Begins in 3, 2, 1... GO *@
+
+	var root = Model.Content.AncestorOrSelf(1);
+
+	string slideshowImages = root.GetPropertyValue<string>("simpelSlideshow");
+
+	if (!String.IsNullOrEmpty(slideshowImages))
+	{
+		<ul>
+			@foreach (string image in slideshowImages.Split(','))
+			{
+				var media = Umbraco.TypedMedia(image);
+
+				<li><img src="@media.Url" alt="@media.Name" /></li>
+			}
+		</ul>
+	}
+}
