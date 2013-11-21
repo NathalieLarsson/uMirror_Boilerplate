@@ -232,10 +232,61 @@
     <Content Include="bin\x86\sqlceme40.dll" />
     <Content Include="bin\x86\sqlceqp40.dll" />
     <Content Include="bin\x86\sqlcese40.dll" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="default.aspx" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\dummy.txt" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <None Include="scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="scripts\jquery-2.0.3.js" />
+    <Content Include="scripts\jquery-2.0.3.min.js" />
+    <Content Include="scripts\less-1.4.2.js" />
+    <Content Include="scripts\less-1.4.2.min.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
     <Content Include="umbraco\Actions\editContent.aspx" />
     <Content Include="umbraco\Actions\preview.aspx" />
@@ -2654,6 +2705,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\editorContent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -2857,6 +2909,30 @@
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.NATHALIE-DT.hash" />
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.NATHALIE-DT.list" />
     <Content Include="App_Data\umbraco.config" />
+    <Content Include="less\1382.less" />
+    <Content Include="less\2x.less" />
+    <Content Include="less\320andup.less" />
+    <Content Include="less\480.less" />
+    <Content Include="less\600.less" />
+    <Content Include="less\768.less" />
+    <Content Include="less\992.less" />
+    <Content Include="less\buttons.less" />
+    <Content Include="less\colour.less" />
+    <Content Include="less\elements.less" />
+    <Content Include="less\font-awesome.less" />
+    <Content Include="less\forms.less" />
+    <Content Include="less\mixins.less" />
+    <Content Include="less\modernizr.less" />
+    <Content Include="less\page.less" />
+    <Content Include="less\print.less" />
+    <Content Include="less\reset.less" />
+    <Content Include="less\site.less" />
+    <Content Include="less\tables.less" />
+    <Content Include="less\texture.less" />
+    <Content Include="less\typography.less" />
+    <Content Include="less\variables.less" />
+    <Content Include="Views\Partials\_EditorContent.cshtml" />
+    <Content Include="scripts\jquery-2.0.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2870,7 +2946,7 @@
     <Folder Include="App_Data\preview\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="css\" />
-    <Folder Include="less\" />
+    <Folder Include="images\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>

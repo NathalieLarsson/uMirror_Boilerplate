@@ -7,10 +7,20 @@
     <title>@Model.Content.Name</title>
 </head>
 <body>
-    
-    @Html.Partial("_Navigation")
+	<header>
+		@Html.Partial("_Navigation")
+	</header>
 
-    <h1>@{Model.Content.GetPropertyValue<string>("pageHeading");}</h1>
-    @RenderBody()
+	<section>
+		@Html.Partial("_SimpelSlideshow")
+	</section>
+
+	<main>
+		@RenderBody()
+	</main>
+
+	<footer>
+
+	</footer>
 </body>
 </html>

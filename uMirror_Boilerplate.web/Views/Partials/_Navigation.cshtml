@@ -3,7 +3,7 @@
     var root = Model.Content.AncestorOrSelf(1);
 }
 
-<nav>
+<nav class="main-nav">
 	<ul>
 		<li class="@(root.IsAncestorOrSelf(Model.Content) ? "current" : null)">
 			<a href="@root.Url">Home</a>

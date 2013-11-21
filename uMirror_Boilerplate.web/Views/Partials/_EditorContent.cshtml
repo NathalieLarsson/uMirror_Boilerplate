@@ -1,0 +1,36 @@
+﻿@using umbraco.MacroEngines;
+@using uMirror_Boilerplate.web.utils;
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	var currentPage = Model.Content.Id;
+	var item = Umbraco.TypedContent(currentPage);
+	var pageHeading = Umbraco.GetPageHeading(item);
+	var pageIntroduction = Umbraco.GetPageIntroduction(item);
+	var pageContent = Umbraco.GetPageContent(item);
+	var pageAuthor = Umbraco.GetPageAuthor(item);
+	var PageUrl = Umbraco.GetPageUrl(item);
+	var pageDate = Umbraco.GetPageDate(item);
+	var media = Umbraco.GetPageImage(item);
+	
+	<header class="article-header">
+		<h1 class="article-heading thin-title">@pageHeading</h1>
+	</header>
+
+	if(pageIntroduction != null && pageContent != null && media != null){
+		<article class="article-body">
+			@if (media != null)
+			{
+				<figure class="main">
+					<img src="@media.Url" alt="@pageHeading" />
+				</figure>
+			}
+			@if (!String.IsNullOrEmpty(pageIntroduction))
+			{
+				<p class="page-introduction">
+					@Html.Raw(pageIntroduction)
+				</p>
+			}
+			@Html.Raw(pageContent)
+		</article>
+	}
+}
