@@ -232,6 +232,7 @@
     <Content Include="bin\x86\sqlceme40.dll" />
     <Content Include="bin\x86\sqlceqp40.dll" />
     <Content Include="bin\x86\sqlcese40.dll" />
+    <Content Include="css\stylesheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="default.aspx" />
     <Content Include="masterpages\dummy.txt" />
@@ -282,11 +283,13 @@
     <Content Include="less\bootstrap\bootstrap.less" />
     <Content Include="less\bootstrap\badges.less" />
     <Content Include="less\bootstrap\alerts.less" />
+    <Content Include="less\stylesheet.less" />
     <None Include="scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="scripts\jquery-2.0.3.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
     <Content Include="scripts\less-1.4.2.js" />
     <Content Include="scripts\less-1.4.2.min.js" />
+    <Content Include="scripts\main.js" />
     <Content Include="scripts\unislide.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
     <Content Include="umbraco\Actions\editContent.aspx" />
@@ -2912,7 +2915,6 @@
     <Content Include="App_Data\umbraco.config" />
     <Content Include="less\1382.less" />
     <Content Include="less\2x.less" />
-    <Content Include="less\320andup.less" />
     <Content Include="less\480.less" />
     <Content Include="less\600.less" />
     <Content Include="less\768.less" />
@@ -2938,6 +2940,9 @@
     <Content Include="scripts\unislide.min.js.map">
       <DependentUpon>unislide.js</DependentUpon>
     </Content>
+    <Content Include="scripts\main.min.js.map">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2951,7 +2956,6 @@
     <Folder Include="App_Data\preview\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="Content\" />
-    <Folder Include="css\" />
     <Folder Include="images\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>

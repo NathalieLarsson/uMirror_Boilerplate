@@ -10,13 +10,17 @@
 
 	if (!String.IsNullOrEmpty(slideshowImages))
 	{
-		<ul class="simpel-slideshow">
-			@foreach (string image in slideshowImages.Split(','))
-			{
-				var media = Umbraco.TypedMedia(image);
+		<div class="simpel-slideshow">
+			<ul>
+				@foreach (string image in slideshowImages.Split(','))
+				{
+					var media = Umbraco.TypedMedia(image);
 
-				<li><img src="@media.Url" alt="@media.Name" /></li>
-			}
-		</ul>
+					<li style="background-image: url(@media.Url);">
+						
+					</li>
+				}
+			</ul>
+		</div>
 	}
 }
