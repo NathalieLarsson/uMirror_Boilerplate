@@ -10,7 +10,7 @@
 
 	if (!String.IsNullOrEmpty(slideshowImages))
 	{
-		<ul>
+		<ul class="simpel-slideshow">
 			@foreach (string image in slideshowImages.Split(','))
 			{
 				var media = Umbraco.TypedMedia(image);
