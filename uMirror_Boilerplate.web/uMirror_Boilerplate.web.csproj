@@ -2933,6 +2933,7 @@
     <Content Include="less\variables.less" />
     <Content Include="Views\Partials\_EditorContent.cshtml" />
     <Content Include="scripts\jquery-2.0.3.min.map" />
+    <Content Include="Views\Partials\_SimpelSlideshow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
