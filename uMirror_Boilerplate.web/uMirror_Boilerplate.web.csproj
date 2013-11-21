@@ -211,6 +211,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\dummy.txt" />
+    <Content Include="App_Data\dummy.txt" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.txt" />
+    <Content Include="App_Data\TEMP\ClientDependency\NATHALIE-DT-f2465364548af55ec5c8102385405769-map.xml" />
+    <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="App_Plugins\dummy.txt" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
@@ -2811,6 +2815,48 @@
     <Content Include="Views\Root.cshtml" />
     <Content Include="Views\StandardPage.cshtml" />
     <Content Include="Views\Partials\_Navigation.cshtml" />
+    <Content Include="App_Data\access.config" />
+    <Content Include="App_Data\packages\installed\installedPackages.config" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_2dfd7ab4f9ce4c0f99ff63a6b6a58138.cdC" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_3e1fdc19eb054b9a8bad5c343d6dc479.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_6403563b2305435493968e33bdf033c4.cdC" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_7a867955238d4a2aa2813c72097ae896.cdC" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_a46ce45899674d2b9f9072fe7eb1e39b.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_a747d5161e204849bea5b6062e9467dd.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\2_b6099942f668484f88f61d2edaa557b1.cdJ" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_h" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_0.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_0_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_1.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_1_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_2.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_2_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_3.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_4.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_4_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_5.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments_1" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_n" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_0.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_0_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_1.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_1_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_2.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_2_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_3.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_3_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_4.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_4_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_5.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_6.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_6_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_7.cfs" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.NATHALIE-DT.hash" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.NATHALIE-DT.list" />
+    <Content Include="App_Data\umbraco.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2820,6 +2866,9 @@
     <Content Include="xslt\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\packages\created\" />
+    <Folder Include="App_Data\preview\" />
+    <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="css\" />
     <Folder Include="less\" />
     <Folder Include="Views\MacroPartials\" />
