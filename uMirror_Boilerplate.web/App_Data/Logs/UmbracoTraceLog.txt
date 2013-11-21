@@ -1515,3 +1515,95 @@ System.Web.HttpCompileException (0x80004005): c:\Users\Nathalie\Documents\GitHub
 2013-11-21 21:58:58,753 [9] INFO  umbraco.content - [Thread 18] Loading content from disk cache...
 2013-11-21 21:59:26,831 [9] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2013-09-22 21:59:26
 2013-11-21 21:59:26,832 [9] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 12] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-11-21 22:09:12,600 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-11-21 22:09:12,606 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 3ms)
+2013-11-21 22:09:12,609 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2013-11-21 22:09:12,801 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 29 (took 191ms)
+2013-11-21 22:09:12,859 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2013-11-21 22:09:12,864 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+2013-11-21 22:09:12,864 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+2013-11-21 22:09:12,939 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 14 (took 74ms)
+2013-11-21 22:09:12,946 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2013-11-21 22:09:12,949 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 4 (took 2ms)
+2013-11-21 22:09:12,949 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2013-11-21 22:09:12,953 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 28 (took 3ms)
+2013-11-21 22:09:12,954 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2013-11-21 22:09:12,958 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-11-21 22:09:12,958 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2013-11-21 22:09:12,962 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 4ms)
+2013-11-21 22:09:13,345 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.IApplication
+2013-11-21 22:09:13,353 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 7ms)
+2013-11-21 22:09:13,375 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of Umbraco.Web.Trees.TreeController
+2013-11-21 22:09:13,379 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Trees.TreeController, found 4 (took 3ms)
+2013-11-21 22:09:13,383 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Starting resolution types of umbraco.interfaces.ITree
+2013-11-21 22:09:13,388 [60] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 19 (took 4ms)
+2013-11-21 22:09:13,393 [60] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Initializing Examine and binding to business logic events
+2013-11-21 22:09:13,494 [60] INFO  Umbraco.Web.Search.ExamineEvents - [Thread 1] Adding examine event handlers for index providers: 3
+2013-11-21 22:09:13,546 [60] INFO  umbraco.content - [Thread 54] Loading content from disk cache...
+2013-11-21 22:09:13,604 [60] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+2013-11-21 22:09:13,608 [60] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 20 (took 4ms)
+2013-11-21 22:09:13,737 [60] ERROR Umbraco.Core.PluginManager - [Thread 54] Error creating type Umbraco.Core.Models.PublishedContent.PublishedPropertyType+CompatConverter
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-11-21 22:09:13,742 [60] INFO  Umbraco.Core.PluginManager - [Thread 54] Starting resolution types of Umbraco.Core.PropertyEditors.PropertyEditor
+2013-11-21 22:09:13,751 [60] INFO  Umbraco.Core.PluginManager - [Thread 54] Completed resolution of types of Umbraco.Core.PropertyEditors.PropertyEditor, found 33 (took 9ms)
+2013-11-21 22:09:16,583 [60] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 54] An unhandled exception occurred
+System.InvalidOperationException: The partial view '_SimpelSlideshow' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/RenderMvc/_SimpelSlideshow.aspx
+~/Views/RenderMvc/_SimpelSlideshow.ascx
+~/Views/Shared/_SimpelSlideshow.aspx
+~/Views/Shared/_SimpelSlideshow.ascx
+~/Views/RenderMvc/_SimpelSlideshow.cshtml
+~/Views/RenderMvc/_SimpelSlideshow.vbhtml
+~/Views/Shared/_SimpelSlideshow.cshtml
+~/Views/Shared/_SimpelSlideshow.vbhtml
+~/Views/Partials/_SimpelSlideshow.cshtml
+~/Views/MacroPartials/_SimpelSlideshow.cshtml
+~/Views/_SimpelSlideshow.cshtml
+   at System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Root_cshtml.Execute() in c:\Users\Nathalie\Documents\GitHub\uMirror_Boilerplate\uMirror_Boilerplate.web\Views\Root.cshtml:line 15
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderPageCore>b__6(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   at System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<>c__DisplayClass1c.<InvokeActionResultWithFilters>b__19()
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__19()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass1.<MakeVoidDelegate>b__0()
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
