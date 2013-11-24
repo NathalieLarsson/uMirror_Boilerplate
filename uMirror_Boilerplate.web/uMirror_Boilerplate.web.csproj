@@ -232,14 +232,23 @@
     <Content Include="bin\x86\sqlceme40.dll" />
     <Content Include="bin\x86\sqlceqp40.dll" />
     <Content Include="bin\x86\sqlcese40.dll" />
+    <Content Include="css\bootstrap.css" />
     <Content Include="css\stylesheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="default.aspx" />
     <Content Include="masterpages\dummy.txt" />
+    <Content Include="media\1001\chairs.jpg" />
+    <Content Include="media\1001\chairs_big-thumb.jpg" />
+    <Content Include="media\1001\chairs_thumb.jpg" />
+    <Content Include="media\1002\road.jpg" />
+    <Content Include="media\1002\road_big-thumb.jpg" />
+    <Content Include="media\1002\road_thumb.jpg" />
+    <Content Include="media\1003\bikes.jpg" />
+    <Content Include="media\1003\bikes_big-thumb.jpg" />
+    <Content Include="media\1003\bikes_thumb.jpg" />
     <Content Include="media\dummy.txt" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\dummy.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -284,6 +293,8 @@
     <Content Include="less\bootstrap\badges.less" />
     <Content Include="less\bootstrap\alerts.less" />
     <Content Include="less\stylesheet.less" />
+    <Content Include="less\global.less" />
+    <Content Include="less\_header.less" />
     <None Include="scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="scripts\jquery-2.0.3.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
@@ -2710,6 +2721,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\editorContent.cs" />
+    <Compile Include="utils\navigationHelper.cs" />
+    <Compile Include="utils\pageHepler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -2870,7 +2883,7 @@
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Root.cshtml" />
     <Content Include="Views\StandardPage.cshtml" />
-    <Content Include="Views\Partials\_Navigation.cshtml" />
+    <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="App_Data\access.config" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="App_Data\TEMP\ClientDependency\2_2dfd7ab4f9ce4c0f99ff63a6b6a58138.cdC" />
@@ -2922,7 +2935,6 @@
     <Content Include="less\buttons.less" />
     <Content Include="less\colour.less" />
     <Content Include="less\elements.less" />
-    <Content Include="less\font-awesome.less" />
     <Content Include="less\forms.less" />
     <Content Include="less\mixins.less" />
     <Content Include="less\modernizr.less" />
@@ -2943,6 +2955,10 @@
     <Content Include="scripts\main.min.js.map">
       <DependentUpon>main.js</DependentUpon>
     </Content>
+    <Content Include="Views\Partials\_Logotype.cshtml" />
+    <Content Include="Views\Partials\_ListThreeItems.cshtml" />
+    <Content Include="Views\Partials\PartialElements\_SearchForm.cshtml" />
+    <Content Include="Views\Partials\PartialElements\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

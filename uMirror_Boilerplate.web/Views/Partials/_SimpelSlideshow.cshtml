@@ -1,7 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	<p>Simpel slideshow - TODO</p>		 
-	
 	@* Simpel slieshow - Begins in 3, 2, 1... GO *@
 
 	var root = Model.Content.AncestorOrSelf(1);
@@ -17,7 +15,10 @@
 					var media = Umbraco.TypedMedia(image);
 
 					<li style="background-image: url(@media.Url);">
-						
+						<h1>Fluid, flexible, fantastically minimal.</h1>
+						<p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+						<a class="btn" href="#download">Download</a>
 					</li>
 				}
 			</ul>

@@ -10,17 +10,26 @@
 /* Mixins =================================================== */
 
 // 1. ROOT 					==============================
+
+.margin-bottom(@margin-bottom: 16){
+	@rem: (@margin-bottom / 10);
+	margin-bottom : @margin-bottom * 1px;
+	margin-bottom : ~"@{rem}rem"; 
+}
+
 // 2. TYPOGRAPHY 			==============================
 
 .font-size(@font-size: 16){
-@rem: (@font-size / 10);
-font-size : @font-size * 1px;
-font-size : ~"@{rem}rem"; }
+	@rem: (@font-size / 10);
+	font-size : @font-size * 1px;
+	font-size : ~"@{rem}rem"; 
+}
 
 .text-overflow() {
-overflow : hidden;
-text-overflow : ellipsis;
-white-space : nowrap; }
+	overflow : hidden;
+	text-overflow : ellipsis;
+	white-space : nowrap; 
+}
 
 // 3. COLOUR 				==============================
 // 4. TEXTURE 				==============================
@@ -266,6 +275,57 @@ height : auto;
 width : auto;
 margin : 0; 
 overflow: visible; }
+
+/* Hide text off screen */
+.ooHideText() {
+	.hideText {
+		background-color: transparent;
+		border: 0;
+		overflow: hidden;
+		*text-indent: -9999px; /* IE 6/7 fallback */
+	}
+	.hideText:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+	}
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.ooHideFully {
+	.hideFully {
+		display: none !important;
+		visibility: hidden;
+	}
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.ooHideVisually {
+	.hideVisually {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+/* Extends the .hideVisually class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.ooHideVisuallyFocusable {
+	.hideVisually.focusable:active,
+	.hideVisually.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
 
 // 6. LAYOUT 				============================== 
 

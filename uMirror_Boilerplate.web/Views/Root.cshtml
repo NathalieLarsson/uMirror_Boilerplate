@@ -1,27 +1,43 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
+	var root = Model.Content.AncestorOrSelf(1);
 }
 <html>
 <head>
-    <title>@Model.Content.Name</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@Model.Content.Name</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="//use.typekit.net/xyk4lkn.js"></script>
+	<script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link href="~/css/bootstrap.css" rel="stylesheet" />
 	<link href="~/css/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
-	<header>
-		@Html.Partial("_Navigation")
-	</header>
+	
+	@Html.Partial("Header", root)
 
-	<section>
+	<section class="site-extra">
 		@Html.Partial("_SimpelSlideshow")
 	</section>
 
-	<main>
-		@RenderBody()
+	<section class="site-extra">
+		@Html.Partial("_ListThreeItems")
+	</section>
+
+	<main class="site-main">
+		<div class="container">
+			@RenderBody()
+		</div>
 	</main>
 
-	<footer>
+	<footer class="site-footer">
+		<div class="container">
 
+		</div>
 	</footer>
 
 	<script src="~/scripts/jquery-2.0.3.js"></script>
