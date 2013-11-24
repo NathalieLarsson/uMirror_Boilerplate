@@ -1,0 +1,68 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using uMirror_Boilerplate.web.utils;
+@{
+	var root = Model.Content.AncestorOrSelf(1);
+	var currentPage = Model.Content;
+
+	string navClass = "nav";
+	int maxLevel = 5;
+	bool renderProtectedNodes = false;
+	bool expand = true;
+	string excludeDocTypes = "system";
+	int navLevel = 1;
+	bool secondDropdown = false;
+
+	if (root != null)
+	{
+		<nav class="nav-main navbar-collapse collapse" role="navigation" id="mainNavigation">
+			<ul id="mainNavigation" class="@navClass nav-list first-nav">
+				@enumerateNode(root, excludeDocTypes, renderProtectedNodes, expand, currentPage, maxLevel, navLevel, secondDropdown, navClass)
+			</ul>
+		</nav>
+	}
+}
+
+@helper enumerateNode(IPublishedContent node, string exludeDocTypes, bool renderProtectedNodes, bool expand, IPublishedContent currentPage, int maxLevel, int navLevel, bool secondDropdown, string navClass = "")
+{
+	var children = node.Children.Where(x => x.IsVisible() && !exludeDocTypes.Contains(x.DocumentTypeAlias) && !renderProtectedNodes);
+
+	foreach (var child in children)
+	{
+		string position = string.Empty;
+		if (children.First().Equals(child))
+		{
+			position = "first";
+		}
+		if (children.Last().Equals(child))
+		{
+			position = String.IsNullOrEmpty(position) ? "last" : "first last";
+		}
+
+		var level = navLevel + 1;
+
+		@drawNode(child, exludeDocTypes, renderProtectedNodes, position, expand, currentPage, maxLevel, level, secondDropdown)
+	}
+}
+
+@helper drawNode(IPublishedContent node, string excludeDocTypes, bool renderProtectedNodes, string position, bool expand, IPublishedContent currentPage, int maxLevel, int level, bool secondDropdown)
+{
+	string active = NavigationHelper.isActive(node, currentPage) ? "expanded" : string.Empty;
+	string cssClasses = (position + " " + active).Trim();
+	string nodeName = Umbraco.Coalesce(node.GetPropertyValue("menuTitle"), node.Name);
+
+	<li class="nav-list-item @cssClasses">
+		<a href="@node.Url" class="item-link @(NavigationHelper.activeClass(node, currentPage))">@nodeName</a>
+
+		@if ((NavigationHelper.visibleChildren(node, currentPage)) && (NavigationHelper.isActive(node, currentPage) || expand) && node.Level < maxLevel && node.Children.Count() >= 1)
+		{
+			<button class="toggle-subnav-btn toggle-btn" type="button" data-toggle="collapse" data-target="#@node.UrlName.ToLower()">
+				<span class="glyphicon glyphicon-chevron-down"></span>
+			</button>
+
+			// TODO
+			<ul id="@node.UrlName.ToLower()" class="nav nav-sub-list @(NavigationHelper.navigationLevel(level)) collapse @(NavigationHelper.isActive(node, currentPage) ? "in" : string.Empty)">
+				@enumerateNode(node, excludeDocTypes, renderProtectedNodes, expand, currentPage, maxLevel, level, secondDropdown)
+			</ul>
+		}
+	</li>
+}

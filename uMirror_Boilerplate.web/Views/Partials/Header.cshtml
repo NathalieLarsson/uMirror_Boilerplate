@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using uMirror_Boilerplate.web.utils;
+@{
+	IPublishedContent root = Model.Content.AncestorOrSelf(1);
+
+	var searchPage = Umbraco.searchPageUrl(root);
+}
+
+<header class="header cf" role="banner" id="header">
+	@Html.Partial("_Logotype")
+
+	<a class="current-page" href="@Model.Content.AncestorOrSelf(1).Url"><h2 class="echo">@Model.Content.AncestorOrSelf(1).Name</h2></a>
+
+	<a class="nav-toggle nav-toggle-search icon-search" href="@searchPage">
+		<span class="glyphicon glyphicon-search"></span>
+		<span class="is-vishidden">Search</span>
+	</a>
+
+	<a class="nav-toggle nav-toggle-menu icon-menu" href="javascript:void(0)" data-toggle="collapse" data-target="#mainNavigation" data-parent="#header">
+		<span class="glyphicon glyphicon-align-justify pull-right"></span>
+		<span class="is-vishidden">Menu</span>
+	</a>
+
+	<a class="nav-toggle nav-toggler-home" href="/">
+		<span class="glyphicon glyphicon-home"></span>
+		<span class="is-vishidden">Home</span>
+	</a>
+
+	@Html.Partial("PartialElements/_Navigation")
+
+	@Html.Partial("PartialElements/_SearchForm")
+</header>

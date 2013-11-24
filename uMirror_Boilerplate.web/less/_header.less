@@ -1,0 +1,118 @@
+// === Header ============================================
+.header {
+	background: #ffffff;
+	padding: 0;
+	border-bottom: 1px solid #dbdbdb;
+	max-width: 72rem;
+	margin: 0 auto;
+	padding: 0.5rem;
+	.margin-bottom(10);
+}
+
+.logo{
+	overflow: hidden;
+	text-align: center;
+	clear: both;
+	padding: 20px 0;
+
+	&.logo-image{
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+	&.logo-text a{
+		.font-size(20);
+		color: @orange;
+	}
+}
+
+.parent-page {
+	float: left;
+	max-width: 8rem;
+	margin: 0.4rem;
+}
+
+// === Navigation ========================================
+.nav-main{
+	overflow: hidden;
+	clear: both;
+	overflow: hidden;
+
+	ul{
+		list-style: none;
+
+		li{
+			margin: 0 5px;
+
+			a{
+				padding: 5px 12px;
+				display: block;
+				border-bottom: 1px solid #eeeeee;
+
+				&.last{
+					border:0;
+				}
+			}
+		}
+	}
+
+	&.active {
+		max-height: 40em;
+	}
+}
+
+.current-page h2{
+	float: left;
+	margin: 0;
+	padding: 8px 0;
+}
+
+.nav-toggle {
+	float: right;
+	display: block;
+	padding: 9px 14px;
+	.font-size(14);
+	line-height: 1;
+	border-left: 1px solid #dbdbdb;
+}
+
+.search-form {
+	overflow: hidden;
+	max-height: 0;
+}
+
+
+@media all and (min-width: 46.8em) {
+
+	.header{
+		max-width: 1140px;
+	}
+
+	.parent-page {
+		max-width: 9rem;
+	}
+
+	.nav-toggle,
+	.current-page {
+		display: none;
+	}
+
+	.search-form {
+		float: right;
+		max-height: none;
+		margin: 0.65em 0.5em 0 0;
+	}
+
+	.nav-main {
+		max-height: none;
+		float: right;
+		clear: none;
+	}
+	.nav-main li {
+		float: left;
+	}
+	.nav-main a {
+		border: 0;
+	}
+}
+

@@ -9,12 +9,14 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // 1. ROOT 					==============================
 
-// CSS reset
+// CSS reset och global classes
 @import "reset.less";
+@import "global.less";
 
 // Variables and mixins
 @import "variables.less";
 @import "mixins.less";
+
 
 // Site wide styles (html, body)
 @import "site.less";
@@ -34,9 +36,6 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 // Alerts, badges, boxes and gradients
 @import "texture.less";
 
-// Font Awesome icon fonts (optional)
-@import "font-awesome.less";
-
 // 5. ELEMENTS 				==============================
 
 // Figures, images and other elements
@@ -55,6 +54,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // Page level layout styles (banner, navigation, content, contentinfo)
 @import "page.less";
+@import "_header.less";
 
 //  7. VENDOR-SPECIFIC 		==============================
 

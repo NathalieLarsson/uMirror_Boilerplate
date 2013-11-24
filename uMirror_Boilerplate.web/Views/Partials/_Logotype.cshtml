@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	
+	var root = Model.Content.AncestorOrSelf(1);
+	var logoId = root.GetPropertyValue("logotype");
+
+	if (logoId != null)
+	{
+		var logo = Umbraco.TypedMedia(logoId);
+		
+		<h1 class="logo logo-image"><a href="/"><img src="@logo.Url" alt="@root.Name" /></a></h1>
+	}
+	else
+	{
+		<h1 class="logo logo-text"><a href="/">@Html.Raw(root.Name)</a></h1>
+	}
+}
