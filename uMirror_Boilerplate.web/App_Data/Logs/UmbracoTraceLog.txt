@@ -2035,3 +2035,5 @@ System.MissingMethodException: No parameterless constructor defined for this obj
 2013-11-21 22:50:57,489 [57] INFO  Umbraco.Core.PluginManager - [Thread 75] Completed resolution of types of Umbraco.Core.PropertyEditors.PropertyEditor, found 33 (took 8ms)
 2013-11-21 23:03:14,985 [57] INFO  umbraco.BusinessLogic.Log - [Thread 12] Log scrubbed.  Removed all items older than 2013-09-22 23:03:14
 2013-11-21 23:03:14,987 [57] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 12] Application shutdown. Reason: ConfigurationChange
+2013-11-24 17:11:36,765 [14] INFO  umbraco.BusinessLogic.Log - [Thread 20] Log scrubbed.  Removed all items older than 2013-09-25 17:11:36
+2013-11-24 17:11:36,767 [14] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 20] Application shutdown. Reason: HostingEnvironment
