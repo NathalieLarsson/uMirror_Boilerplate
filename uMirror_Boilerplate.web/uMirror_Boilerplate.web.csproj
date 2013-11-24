@@ -2943,11 +2943,11 @@
     <Content Include="less\texture.less" />
     <Content Include="less\typography.less" />
     <Content Include="less\variables.less" />
-    <Content Include="Views\Partials\_EditorContent.cshtml" />
+    <Content Include="Views\Partials\EditorContent.cshtml" />
     <Content Include="scripts\jquery-2.0.3.min.map" />
-    <Content Include="Views\Partials\_SimpelSlideshow.cshtml" />
-    <Content Include="Views\Partials\_Logotype.cshtml" />
-    <Content Include="Views\Partials\_ListThreeItems.cshtml" />
+    <Content Include="Views\Partials\SimpelSlideshow.cshtml" />
+    <Content Include="Views\Partials\PartialElements\_Logotype.cshtml" />
+    <Content Include="Views\Partials\ListThreeItems.cshtml" />
     <Content Include="Views\Partials\PartialElements\_SearchForm.cshtml" />
     <Content Include="Views\Partials\PartialElements\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
