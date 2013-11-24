@@ -2717,7 +2717,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\DivClassHelper.cs" />
     <Compile Include="utils\editorContent.cs" />
+    <Compile Include="utils\listHelper.cs" />
     <Compile Include="utils\navigationHelper.cs" />
     <Compile Include="utils\pageHepler.cs" />
   </ItemGroup>
@@ -2947,7 +2949,7 @@
     <Content Include="scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\Partials\SimpelSlideshow.cshtml" />
     <Content Include="Views\Partials\PartialElements\_Logotype.cshtml" />
-    <Content Include="Views\Partials\ListThreeItems.cshtml" />
+    <Content Include="Views\Partials\PromotePagesMain.cshtml" />
     <Content Include="Views\Partials\PartialElements\_SearchForm.cshtml" />
     <Content Include="Views\Partials\PartialElements\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
