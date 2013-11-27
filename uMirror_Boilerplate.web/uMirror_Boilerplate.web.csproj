@@ -72,6 +72,9 @@
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\packages\ImageResizer.3.4.2\lib\ImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\interfaces.dll</HintPath>
     </Reference>
