@@ -1,5 +1,7 @@
 ﻿@using umbraco.MacroEngines;
 @using uMirror_Boilerplate.web.utils;
+@using ImageResizer.Resizing;
+@using Eksponent.CropUp;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	var currentPage = Model.Content.Id;
@@ -21,6 +23,7 @@
 			@if (media != null)
 			{
 				<figure class="main">
+					
 					<img src="@media.Url" alt="@pageHeading" />
 				</figure>
 			}
