@@ -70,6 +70,8 @@
     <key alias="save">Gem</key>
     <key alias="saveAndPublish">Gem og udgiv</key>
     <key alias="saveToPublish">Gem og send til udgivelse</key>
+    <key alias="select">Vælg</key>
+    <key alias="somethingElse">Flere muligheder...</key>
     <key alias="showPage">Se siden</key>
     <key alias="styleChoose">Vælg formattering</key>
     <key alias="styleShow">Vis koder</key>
@@ -110,11 +112,16 @@
     <key alias="updateDate">Sidst redigeret</key>
     <key alias="uploadClear">Fjern fil</key>
     <key alias="urls">Link til dokument</key>
+
+    <key alias="childItems" version="7.0">Undersider</key>
   </area>
   <area alias="create">
     <key alias="chooseNode">Hvor ønsker du at oprette den nye %0%</key>
     <key alias="createUnder">Opret under</key>
     <key alias="updateData">Vælg en type og skriv en titel</key>
+
+    <key alias="noDocumentTypes" version="7.0"><![CDATA[Der kunne ikke findes nogen tilladte dokument typer. Du skal tillade disse i indstillinger under <strong>"dokument typer"</strong>.]]></key>
+    <key alias="noMediaTypes" version="7.0"><![CDATA[Der kunne ikke findes nogen tilladte media typer. Du skal tillade disse i indstillinger under <strong>"media typer"</strong>.]]></key>
   </area>
   <area alias="dashboard">
     <key alias="browser">Til dit website</key>
@@ -227,9 +234,20 @@
     <key alias="xsltErrorHeader">Fejl i XSLT kode</key>
     <key alias="xsltErrorText">Din XSLT er ikke opdateret, da det indeholdt en fejl</key>
   </area>
+
+  <area alias="placeholders">
+    <key alias="username">Indtast dit brugernavn</key>
+    <key alias="password">Indtast dit kodeord</key>
+    <key alias="nameentity">Navngiv %0%...</key>
+    <key alias="entername">Indtast navn...</key>
+    <key alias="search">Søg...</key>
+    <key alias="filter">Filtre...</key>
+  </area>
+
   <area alias="general">
     <key alias="about">Om</key>
     <key alias="action">Handling</key>
+    <key alias="actions">Muligheder</key>
     <key alias="add">Tilføj</key>
     <key alias="alias">Alias</key>
     <key alias="areyousure">Er du sikker?</key>
@@ -403,8 +421,21 @@
     <key alias="renewSession">Forny for at gemme dine ændringer</key>
   </area>
   <area alias="login">
+
+    <key alias="greeting0">Så er det søndag!</key>  
+    <key alias="greeting1">Smil, det er mandag!</key>
+    <key alias="greeting2">Hurra, det er tirsdag!</key>
+    <key alias="greeting3">Hvilken herlig onsdag!</key>
+    <key alias="greeting4">Glædelig torsdag!</key>
+    <key alias="greeting5">Endelig fredag!</key>
+    <key alias="greeting6">Glædelig lørdag</key>
+    
+
+    <key alias="instruction">indtast brugernavn og kodeord</key>
+    <key alias="timeout">Din session er udløbet</key>
+
+
     <key alias="bottomText"><![CDATA[<p style="text-align:right;">&copy; 2001 - %0% <br /><a href="http://umbraco.org" style="text-decoration: none" target="_blank">umbraco.org</a></p> ]]></key>
-    <key alias="topText">Velkommen til umbraco, indtast dit brugernavn og kodeord:</key>
   </area>
   <area alias="main">
     <key alias="dashboard">Skrivebord</key>
@@ -530,7 +561,7 @@ Mange hilsner fra umbraco robotten
     <key alias="concierge">Concierge</key>
     <key alias="content">Indhold</key>
     <key alias="courier">Courier</key>
-    <key alias="developer">Developer</key>
+    <key alias="developer">Udvikler</key>
     <key alias="installer">Umbraco konfigurationsguide</key>
     <key alias="media">Mediearkiv</key>
     <key alias="member">Medlemmer</key>
@@ -539,6 +570,7 @@ Mange hilsner fra umbraco robotten
     <key alias="statistics">Statistik</key>
     <key alias="translation">Oversættelse</key>
     <key alias="users">Brugere</key>
+    <key alias="help">Hjælp</key>
   </area>
   <area alias="settings">
     <key alias="defaulttemplate">Standard skabelon</key>
@@ -719,6 +751,8 @@ Mange hilsner fra umbraco robotten
     <key alias="administrators">Administrator</key>
     <key alias="categoryField">Kategorifelt</key>
     <key alias="changePassword">Skift dit kodeord</key>
+    <key alias="newPassword">Skift dit kodeord</key>
+    <key alias="confirmNewPassword">Gentag dit nye kodeord</key>
     <key alias="changePasswordDescription">Du kan ændre dit kodeord, som giver dig adgang til Umbraco Back Office ved at udfylde formularen og klikke på knappen 'Skift dit kodeord'</key>
     <key alias="contentChannel">Indholdskanal</key>
     <key alias="descriptionField">Beskrivelsesfelt</key>
@@ -750,5 +784,9 @@ Mange hilsner fra umbraco robotten
     <key alias="usertype">Brugertype</key>
     <key alias="userTypes">Bruger typer</key>
     <key alias="writer">Forfatter</key>
+
+    <key alias="yourProfile">Din profil</key>
+    <key alias="yourHistory">Din historik</key>
+    <key alias="sessionExpires">Session udløber</key>
   </area>
 </language>

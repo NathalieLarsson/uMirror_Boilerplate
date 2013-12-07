@@ -1,2 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<map />
+<map>
+  <item key="L3VtYnJhY28vbGliL2pxdWVyeS9qcXVlcnktdWktMS4xMC4zLmN1c3RvbS5taW4uanM7L3VtYnJhY28vbGliL2FuZ3VsYXIvMS4xLjUvYW5ndWxhci1jb29raWVzLm1pbi5qczsvdW1icmFjby9saWIvYW5ndWxhci8xLjEuNS9hbmd1bGFyLW1vYmlsZS5qczsvdW1icmFjby9saWIvYW5ndWxhci8xLjEuNS9hbmd1bGFyLXNhbml0aXplLm1pbi5qczsvdW1icmFjby9saWIvYW5ndWxhci9hbmd1bGFyLXVpLXNvcnRhYmxlLmpzOy91bWJyYWNvL2xpYi9qcXVlcnkvanF1ZXJ5LnVwbG9hZC9qcy9qcXVlcnkuZmlsZXVwbG9hZC5qczsvdW1icmFjby9saWIvanF1ZXJ5L2pxdWVyeS51cGxvYWQvanMvbG9hZC1pbWFnZS5taW4uanM7L3VtYnJhY28vbGliL2pxdWVyeS9qcXVlcnkudXBsb2FkL2pzL2pxdWVyeS5maWxldXBsb2FkLXByb2Nlc3MuanM7L3VtYnJhY28vbGliL2pxdWVyeS9qcXVlcnkudXBsb2FkL2pzL2pxdWVyeS5maWxldXBsb2FkLWltYWdlLmpzOy91bWJyYWNvL2xpYi9qcXVlcnkvanF1ZXJ5LnVwbG9hZC9qcy9qcXVlcnkuZmlsZXVwbG9hZC1hbmd1bGFyLmpzOy91bWJyYWNvL2xpYi9ib290c3RyYXAvanMvYm9vdHN0cmFwLjIuMy4yLm1pbi5qczsvdW1icmFjby9saWIvdW1icmFjby9FeHRlbnNpb25zLmpzOy91bWJyYWNvL2xpYi91bWJyYWNvL05hbWVzcGFjZU1hbmFnZXIuanM7L3VtYnJhY28vbGliL3VtYnJhY28vTGVnYWN5VW1iQ2xpZW50TWdyLmpzOy91bWJyYWNvL2xpYi91bWJyYWNvL0xlZ2FjeVNwZWVjaEJ1YmJsZS5qczsvdW1icmFjby9qcy9hcHAuanM7L3VtYnJhY28vanMvdW1icmFjby5yZXNvdXJjZXMuanM7L3VtYnJhY28vanMvdW1icmFjby5kaXJlY3RpdmVzLmpzOy91bWJyYWNvL2pzL3VtYnJhY28uZmlsdGVycy5qczsvdW1icmFjby9qcy91bWJyYWNvLnNlcnZpY2VzLmpzOy91bWJyYWNvL2pzL3VtYnJhY28uc2VjdXJpdHkuanM7L3VtYnJhY28vanMvdW1icmFjby5jb250cm9sbGVycy5qczsvdW1icmFjby9qcy9yb3V0ZXMuanM7L3VtYnJhY28vanMvaW5pdC5qczsvdW1icmFjby9kZXZlbG9wZXIvUmVsYXRpb25UeXBlcy9UcmVlTWVudS9BY3Rpb25EZWxldGVSZWxhdGlvblR5cGUuanM7L3VtYnJhY28vZGV2ZWxvcGVyL1JlbGF0aW9uVHlwZXMvVHJlZU1lbnUvQWN0aW9uTmV3UmVsYXRpb25UeXBlLmpzOw" file="C:\Users\Nathalie\Documents\GitHub\uMirror_Boilerplate\uMirror_Boilerplate.web\App_Data\TEMP\ClientDependency\2_ae4ffc2f4bb34d76af737b5dd82a7fb1.cdJ" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco/lib/jquery/jquery-ui-1.10.3.custom.min.js" />
+      <file name="/umbraco/lib/angular/1.1.5/angular-cookies.min.js" />
+      <file name="/umbraco/lib/angular/1.1.5/angular-mobile.js" />
+      <file name="/umbraco/lib/angular/1.1.5/angular-sanitize.min.js" />
+      <file name="/umbraco/lib/angular/angular-ui-sortable.js" />
+      <file name="/umbraco/lib/jquery/jquery.upload/js/jquery.fileupload.js" />
+      <file name="/umbraco/lib/jquery/jquery.upload/js/load-image.min.js" />
+      <file name="/umbraco/lib/jquery/jquery.upload/js/jquery.fileupload-process.js" />
+      <file name="/umbraco/lib/jquery/jquery.upload/js/jquery.fileupload-image.js" />
+      <file name="/umbraco/lib/jquery/jquery.upload/js/jquery.fileupload-angular.js" />
+      <file name="/umbraco/lib/bootstrap/js/bootstrap.2.3.2.min.js" />
+      <file name="/umbraco/lib/umbraco/Extensions.js" />
+      <file name="/umbraco/lib/umbraco/NamespaceManager.js" />
+      <file name="/umbraco/lib/umbraco/LegacyUmbClientMgr.js" />
+      <file name="/umbraco/lib/umbraco/LegacySpeechBubble.js" />
+      <file name="/umbraco/js/app.js" />
+      <file name="/umbraco/js/umbraco.resources.js" />
+      <file name="/umbraco/js/umbraco.directives.js" />
+      <file name="/umbraco/js/umbraco.filters.js" />
+      <file name="/umbraco/js/umbraco.services.js" />
+      <file name="/umbraco/js/umbraco.security.js" />
+      <file name="/umbraco/js/umbraco.controllers.js" />
+      <file name="/umbraco/js/routes.js" />
+      <file name="/umbraco/js/init.js" />
+      <file name="/umbraco/developer/RelationTypes/TreeMenu/ActionDeleteRelationType.js" />
+      <file name="/umbraco/developer/RelationTypes/TreeMenu/ActionNewRelationType.js" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY28vYXNzZXRzL2Nzcy91bWJyYWNvLmNzczs" file="C:\Users\Nathalie\Documents\GitHub\uMirror_Boilerplate\uMirror_Boilerplate.web\App_Data\TEMP\ClientDependency\2_71098013073b4b15975ec9488c283b8c.cdC" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco/assets/css/umbraco.css" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L3VtYnJhY29fY2xpZW50L3VpL2pxdWVyeS5qczsvdW1icmFjb19jbGllbnQvdWkvYmFzZTIuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29DbGllbnRNYW5hZ2VyLmpzOy91bWJyYWNvX2NsaWVudC9VSS9rbm9ja291dC5qczsvdW1icmFjb19jbGllbnQvVUkva25vY2tvdXQubWFwcGluZy5qczsvdW1icmFjb19jbGllbnQvdWkvZGVmYXVsdC5qczs" file="C:\Users\Nathalie\Documents\GitHub\uMirror_Boilerplate\uMirror_Boilerplate.web\App_Data\TEMP\ClientDependency\2_f9e49c7c155447a7a0aebd4e89719ec7.cdJ" compression="gzip" version="2">
+    <files>
+      <file name="/umbraco_client/Application/NamespaceManager.js" />
+      <file name="/umbraco_client/ui/jquery.js" />
+      <file name="/umbraco_client/ui/base2.js" />
+      <file name="/umbraco_client/Application/UmbracoClientManager.js" />
+      <file name="/umbraco_client/UI/knockout.js" />
+      <file name="/umbraco_client/UI/knockout.mapping.js" />
+      <file name="/umbraco_client/ui/default.js" />
+    </files>
+  </item>
+</map>

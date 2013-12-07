@@ -8,7 +8,7 @@ using ImageResizer;
 
 namespace uMirror_Boilerplate.web.utils.Cropping
 {
-	public class SquareCrop
+	public static class SquareCrop
 	{
 		public static string SquareCropping(this UmbracoHelper umbracoHelper, IPublishedContent publishedContent){
 			

@@ -1,4 +1,4 @@
-/*! umbraco - v7.0.0-Beta - 2013-11-21
+/*! umbraco - v7.0.0-Beta - 2013-12-05
  * https://github.com/umbraco/umbraco-cms/tree/7.0.0
  * Copyright (c) 2013 Umbraco HQ;
  * Licensed MIT
@@ -7,6 +7,7 @@
 (function() { 
 
 angular.module("umbraco.mocks", ['ngCookies']);
+angular.module("umbraco.mocks.services", []);
 angular.module('umbraco.mocks').
   factory('prevaluesMocks', ['$httpBackend', 'mocksUtils', function ($httpBackend, mocksUtils) {
       'use strict';
@@ -1227,6 +1228,30 @@ angular.module('umbraco.mocks').
           }
       };
   }]);
+angular.module('umbraco.mocks.services')
+.factory('assetsService', function ($q) {
+
+    return {
+        loadCss : function(path, scope, attributes, timeout){
+            var deferred = $q.defer();
+            deferred.resolve();
+            return deferred.promise;
+        },
+        loadJs : function(path, scope, attributes, timeout){
+            var deferred = $q.defer();
+            
+            if(path[0] !== "/"){
+                path = "/" + path;
+            }   
+
+            $.getScript( "base" + path, function( data, textStatus, jqxhr ) {
+                deferred.resolve();
+            });
+
+            return deferred.promise;
+        }
+    };
+});
 angular.module('umbraco.mocks').
   factory('localizationMocks', ['$httpBackend', 'mocksUtils', function ($httpBackend, mocksUtils) {
       'use strict';

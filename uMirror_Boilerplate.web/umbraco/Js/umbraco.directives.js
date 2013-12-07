@@ -1,4 +1,4 @@
-/*! umbraco - v7.0.0-Beta - 2013-11-21
+/*! umbraco - v7.0.0-Beta - 2013-12-05
  * https://github.com/umbraco/umbraco-cms/tree/7.0.0
  * Copyright (c) 2013 Umbraco HQ;
  * Licensed MIT
@@ -1275,7 +1275,7 @@ angular.module("umbraco.directives")
 * @name umbraco.directives.directive:umbSections
 * @restrict E
 **/
-function sectionsDirective($timeout, $window, navigationService, treeService, sectionResource, appState) {
+function sectionsDirective($timeout, $window, navigationService, treeService, sectionResource, appState, eventsService) {
     return {
         restrict: "E",    // restrict to an element
         replace: true,   // replace the html element with the template
@@ -1323,7 +1323,7 @@ function sectionsDirective($timeout, $window, navigationService, treeService, se
 			}
             
             //Listen for global state changes
-			scope.$on("appState.globalState.changed", function (e, args) {
+            eventsService.on("appState.globalState.changed", function (e, args) {
 			    if (args.key === "showTray") {
 			        scope.showTray = args.value;
 			    }
@@ -1332,7 +1332,7 @@ function sectionsDirective($timeout, $window, navigationService, treeService, se
 			    }
 			});
 
-			scope.$on("appState.sectionState.changed", function (e, args) {
+			eventsService.on("appState.sectionState.changed", function (e, args) {
 			    if (args.key === "currentSection") {
 			        scope.currentSection = args.value;
 			    }
