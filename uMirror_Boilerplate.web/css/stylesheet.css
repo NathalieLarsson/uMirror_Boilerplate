@@ -247,7 +247,7 @@ h6 {
   margin: 0;
   font-family: 'Arvo', serif;
   font-weight: bold;
-  color: inherit;
+  color: #535353;
   text-rendering: optimizelegibility;
 }
 h1 small,
@@ -1464,6 +1464,16 @@ table tbody tr:hover th {
 .table-striped tbody tr:nth-child(odd) th {
   background-color: #c7ced6;
 }
+.site-extra {
+  clear: both;
+  overflow: hidden;
+}
+.site-extra.promote-pages-main {
+  margin-bottom: 16px;
+  margin-bottom: 1.6rem;
+  background-color: rgba(193, 81, 47, 0.1);
+  padding: 20px 0;
+}
 .simpel-slideshow {
   position: relative;
   width: 100%;
@@ -1496,6 +1506,9 @@ table tbody tr:hover th {
   background-size: cover;
   background-clip: padding-box;
   box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+.page-introduction {
+  font-family: 'Merriweather', Georgia, Times, "Times New Roman";
 }
 .header {
   background: #ffffff;
@@ -1534,15 +1547,15 @@ table tbody tr:hover th {
 .nav-main ul {
   list-style: none;
 }
-.nav-main ul li {
+.nav-main li {
   margin: 0 5px;
 }
-.nav-main ul li a {
+.nav-main a {
   padding: 5px 12px;
   display: block;
   border-bottom: 1px solid #eeeeee;
 }
-.nav-main ul li a.last {
+.nav-main a.last {
   border: 0;
 }
 .nav-main.active {
@@ -1569,6 +1582,7 @@ table tbody tr:hover th {
 @media all and (min-width: 46.8em) {
   .header {
     max-width: 1140px;
+    border: 0;
   }
   .parent-page {
     max-width: 9rem;
@@ -1586,6 +1600,7 @@ table tbody tr:hover th {
     max-height: none;
     float: right;
     clear: none;
+    padding-top: 15px;
   }
   .nav-main li {
     float: left;

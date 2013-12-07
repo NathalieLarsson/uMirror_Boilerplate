@@ -1,4 +1,4 @@
-/*! umbraco - v7.0.0-Beta - 2013-11-21
+/*! umbraco - v7.0.0-Beta - 2013-12-05
  * https://github.com/umbraco/umbraco-cms/tree/7.0.0
  * Copyright (c) 2013 Umbraco HQ;
  * Licensed MIT
@@ -909,7 +909,7 @@ function dataTypeResource($q, $http, umbDataFormatter, umbRequestHelper) {
          *        alert('its gone!');
          *    });
          * </pre> 
-         * 
+         *  
          * @param {String} editorAlias string alias of editor type to retrive prevalues configuration for
          * @param {Int} id id of datatype to retrieve prevalues for        
          * @returns {Promise} resourcePromise object.
@@ -927,7 +927,7 @@ function dataTypeResource($q, $http, umbDataFormatter, umbRequestHelper) {
                        "dataTypeApiBaseUrl",
                        "GetPreValues",
                        [{ editorAlias: editorAlias }, { dataTypeId: dataTypeId }])),
-               'Failed to retreive pre values for editor id ' + editorId);
+               'Failed to retreive pre values for editor alias ' + editorAlias);
         },
 
         /**

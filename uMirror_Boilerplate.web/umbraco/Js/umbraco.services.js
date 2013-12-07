@@ -1,4 +1,4 @@
-/*! umbraco - v7.0.0-Beta - 2013-11-21
+/*! umbraco - v7.0.0-Beta - 2013-12-05
  * https://github.com/umbraco/umbraco-cms/tree/7.0.0
  * Copyright (c) 2013 Umbraco HQ;
  * Licensed MIT
@@ -179,7 +179,7 @@ angular.module('umbraco.services').factory('angularHelper', angularHelper);
  * <pre>
   *    scope.showTree = appState.getGlobalState("showNavigation");
   *
-  *    scope.$on("appState.globalState.changed", function (e, args) {
+  *    eventsService.on("appState.globalState.changed", function (e, args) {
   *               if (args.key === "showNavigation") {
   *                   scope.showTree = args.value;
   *               }
@@ -191,14 +191,14 @@ angular.module('umbraco.services').factory('angularHelper', angularHelper);
  * <pre>
  *    scope.currentSection = appState.getSectionState("currentSection");
  *
- *    scope.$on("appState.sectionState.changed", function (e, args) {
+ *    eventsService.on("appState.sectionState.changed", function (e, args) {
  *               if (args.key === "currentSection") {
  *                   scope.currentSection = args.value;
  *               }
  *           });  
  * </pre>
  */
-function appState($rootScope) {
+function appState(eventsService) {
     
     //Define all variables here - we are never returning this objects so they cannot be publicly mutable
     // changed, we only expose methods to interact with the values.
@@ -246,7 +246,7 @@ function appState($rootScope) {
         var changed = stateObj[key] !== value;
         stateObj[key] = value;
         if (changed) {
-            $rootScope.$broadcast("appState." + stateObjName + ".changed", { key: key, value: value });
+            eventsService.emit("appState." + stateObjName + ".changed", { key: key, value: value });
         }
     }
     
@@ -498,9 +498,36 @@ angular.module('umbraco.services').factory("editorState", function() {
  * </pre>  
  */
 angular.module('umbraco.services')
-.factory('assetsService', function ($q, $log, angularHelper) {
+.factory('assetsService', function ($q, $log, angularHelper, umbRequestHelper, $rootScope) {
+
+    var initAssetsLoaded = false;
 
     return {
+        
+        /** 
+            Internal method. This is called when the application is loading and the user is already authenticated, or once the user is authenticated.
+            There's a few assets the need to be loaded for the application to function but these assets require authentication to load.
+        */
+        _loadInitAssets: function () {
+            var deferred = $q.defer();
+            //here we need to ensure the required application assets are loaded
+            if (initAssetsLoaded === false) {
+                var self = this;
+                self.loadJs(umbRequestHelper.getApiUrl("serverVarsJs", "", ""), $rootScope).then(function() {
+                    initAssetsLoaded = true;
+
+                    //now we need to go get the legacyTreeJs - but this can be done async without waiting.
+                    self.loadJs(umbRequestHelper.getApiUrl("legacyTreeJs", "", ""), $rootScope);
+
+                    deferred.resolve();
+                });
+            }
+            else {
+                deferred.resolve();
+            }
+            return deferred.promise;
+        },
+
         /**
          * @ngdoc method
          * @name umbraco.services.assetsService#loadCss
@@ -877,7 +904,7 @@ angular.module('umbraco.services').factory('contentEditingHelper', contentEditin
  */
 
 angular.module('umbraco.services')
-.factory('dialogService', function ($rootScope, $compile, $http, $timeout, $q, $templateCache, appState) {
+.factory('dialogService', function ($rootScope, $compile, $http, $timeout, $q, $templateCache, appState, eventsService) {
 
        var dialogs = [];
        
@@ -1086,7 +1113,7 @@ angular.module('umbraco.services')
        }
 
        /** Handles the closeDialogs event */
-       $rootScope.$on("closeDialogs", function (evt, args) {
+       eventsService.on("app.closeDialogs", function (evt, args) {
            removeAllDialogs(args);
        });
 
@@ -1353,26 +1380,47 @@ angular.module('umbraco.services')
        };
    });
 /** Used to broadcast and listen for global events and allow the ability to add async listeners to the callbacks */
+
+/*
+    Core app events: 
+
+    app.ready
+    app.authenticated
+    app.notAuthenticated
+    app.closeDialogs
+*/
+
 function eventsService($q, $rootScope) {
 	
     return {
         
         /** raise an event with a given name, returns an array of promises for each listener */
-        publish: function (name, args) {            
+        emit: function (name, args) {            
 
             //there are no listeners
             if (!$rootScope.$$listeners[name]) {
                 return [];
             }
 
+            //send the event
+            $rootScope.$emit(name, args);
+
+
+            //PP: I've commented out the below, since we currently dont
+            // expose the eventsService as a documented api
+            // and think we need to figure out our usecases for this
+            // since the below modifies the return value of the then on() method
+            /*
             //setup a deferred promise for each listener
             var deferred = [];
             for (var i = 0; i < $rootScope.$$listeners[name].length; i++) {
                 deferred.push($q.defer());
-            }
+            }*/
+
             //create a new event args object to pass to the 
-            // $broadcast containing methods that will allow listeners
+            // $emit containing methods that will allow listeners
             // to return data in an async if required
+            /*
             var eventArgs = {
                 args: args,
                 reject: function (a) {
@@ -1381,20 +1429,20 @@ function eventsService($q, $rootScope) {
                 resolve: function (a) {
                     deferred.pop().resolve(a);
                 }
-            };
+            };*/
             
-            //send the event
-            $rootScope.$broadcast(name, eventArgs);
             
+            
+            /*
             //return an array of promises
             var promises = _.map(deferred, function(p) {
                 return p.promise;
             });
-            return promises;
+            return promises;*/
         },
 
         /** subscribe to a method, or use scope.$on = same thing */
-		subscribe: function(name, callback) {
+		on: function(name, callback) {
 		    return $rootScope.$on(name, callback);
 		},
 		
@@ -1404,7 +1452,6 @@ function eventsService($q, $rootScope) {
 		        handle();
 		    }		    
 		}
-
 	};
 }
 
@@ -1419,16 +1466,9 @@ angular.module('umbraco.services').factory('eventsService', eventsService);
  * that need to attach files.
  * When a route changes successfully, we ensure that the collection is cleared.
  */
-function fileManager($rootScope) {
+function fileManager() {
 
     var fileCollection = [];
-
-    //Whenever a route changes - clear the curent file collection, the file collection is only relavent
-    // when working in an editor and submitting data to the server.
-    //This ensures that memory remains clear of any files and that the editors don't have to manually clear the files.
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        fileCollection = [];
-    });
 
     return {
         /**
@@ -1441,14 +1481,14 @@ function fileManager($rootScope) {
          *  Attaches files to the current manager for the current editor for a particular property, if an empty array is set
          *   for the files collection that effectively clears the files for the specified editor.
          */
-        setFiles: function(propertyId, files) {
+        setFiles: function(propertyAlias, files) {
             //this will clear the files for the current property and then add the new ones for the current property
             fileCollection = _.reject(fileCollection, function (item) {
-                return item.id === propertyId;
+                return item.alias === propertyAlias;
             });
             for (var i = 0; i < files.length; i++) {
                 //save the file object to the files collection
-                fileCollection.push({ id: propertyId, file: files[i] });
+                fileCollection.push({ alias: propertyAlias, file: files[i] });
             }
         },
         
@@ -2140,7 +2180,7 @@ angular.module('umbraco.services')
 	return keyboardManagerService;
 }]);
 angular.module('umbraco.services')
-.factory('localizationService', function ($http, $q, $rootScope, $window, $filter, userService) {
+.factory('localizationService', function ($http, $q, eventsService, $window, $filter, userService) {
         var service = {
             // array to hold the localized resource string entries
             dictionary:[],
@@ -2156,7 +2196,7 @@ angular.module('umbraco.services')
                 // set the flag that the resource are loaded
                 service.resourceFileLoaded = true;
                 // broadcast that the file has been loaded
-                $rootScope.$broadcast('localizeResourcesUpdates');
+                eventsService.emit("localizationService.updated", data);
             },
 
             // allows setting of language on the fly
@@ -2179,7 +2219,7 @@ angular.module('umbraco.services')
                         service.resourceFileLoaded = true;
                         service.dictionary = response.data;
 
-                        $rootScope.$broadcast('localizeResourcesUpdates');
+                        eventsService.emit("localizationService.updated", service.dictionary);
 
                         return deferred.resolve(service.dictionary);
                     }, function(err){
@@ -2243,12 +2283,15 @@ angular.module('umbraco.services')
                 }
                 return "[" + value + "]";
             }
-
-
         };
 
         // force the load of the resource file
         service.initLocalizedResources();
+
+        //This happens after login / auth and assets loading
+        eventsService.on("app.authenticated", function(){
+            service.resourceFileLoaded = false;
+        });
 
         // return the local instance when called
         return service;
@@ -3157,8 +3200,13 @@ function navigationService($rootScope, $routeParams, $log, $location, $q, $timeo
 	     * @description
 	     * hides the currently open dialog
 	     */
-        hideDialog: function () {
-            this.showMenu(undefined, { skipDefault: true, node: appState.getMenuState("currentNode") });
+        hideDialog: function (showMenu) {
+            
+            setMode("default");
+          
+            if(showMenu){
+                this.showMenu(undefined, { skipDefault: true, node: appState.getMenuState("currentNode") });
+            }
         },
         /**
           * @ngdoc method
@@ -4050,9 +4098,9 @@ function tinyMceService(dialogService, $log, imageHelper, $http, $timeout, macro
         */
         defaultPrevalues: function () {
                var cfg = {};
-                       cfg.toolbar = ["code", "bold", "italic", "umbracocss","alignleft", "aligncenter", "alignright", "bullist","numlist", "outdent", "indent", "link", "image", "umbmediapicker", "umbembeddialog", "umbmacro"];
+                       cfg.toolbar = ["code", "bold", "italic", "styleselect","alignleft", "aligncenter", "alignright", "bullist","numlist", "outdent", "indent", "link", "image", "umbmediapicker", "umbembeddialog", "umbmacro"];
                        cfg.stylesheets = [];
-                       cfg.dimensions = {height: 400, width: 600};
+                       cfg.dimensions = {height: 500};
                 return cfg;
         },
 
@@ -4524,7 +4572,7 @@ angular.module('umbraco.services').factory('tinyMceService', tinyMceService);
  * @description
  * The tree service factory, used internally by the umbTree and umbTreeItem directives
  */
-function treeService($q, treeResource, iconHelper, notificationsService, $rootScope) {
+function treeService($q, treeResource, iconHelper, notificationsService, eventsService) {
 
     //SD: Have looked at putting this in sessionStorage (not localStorage since that means you wouldn't be able to work
     // in multiple tabs) - however our tree structure is cyclical, meaning a node has a reference to it's parent and it's children
@@ -4769,7 +4817,7 @@ function treeService($q, treeResource, iconHelper, notificationsService, $rootSc
                 }, function(reason) {
 
                     //in case of error, emit event
-                    $rootScope.$broadcast("treeNodeLoadError", {error: reason });
+                    eventsService.emit("treeService.treeNodeLoadError", {error: reason } );
 
                     //stop show the loading indicator  
                     node.loading = false;
@@ -5482,9 +5530,9 @@ function umbRequestHelper($http, $q, umbDataFormatter, angularHelper, dialogServ
                 function (data, formData) {
                     //now add all of the assigned files
                     for (var f in args.files) {
-                        //each item has a property id and the file object, we'll ensure that the id is suffixed to the key
+                        //each item has a property alias and the file object, we'll ensure that the alias is suffixed to the key
                         // so we know which property it belongs to on the server side
-                        formData.append("file_" + args.files[f].id, args.files[f].file);
+                        formData.append("file_" + args.files[f].alias, args.files[f].file);
                     }
 
                 },
@@ -5592,7 +5640,7 @@ function umbRequestHelper($http, $q, umbDataFormatter, angularHelper, dialogServ
 }
 angular.module('umbraco.services').factory('umbRequestHelper', umbRequestHelper);
 angular.module('umbraco.services')
-.factory('userService', function ($rootScope, $q, $location, $log, securityRetryQueue, authResource, dialogService, $timeout, angularHelper) {
+.factory('userService', function ($rootScope, eventsService, $q, $location, $log, securityRetryQueue, authResource, dialogService, $timeout, angularHelper) {
 
     var currentUser = null;
     var lastUserId = null;
@@ -5740,7 +5788,7 @@ angular.module('umbraco.services')
         currentUser = null;
         
         //broadcast a global event that the user is no longer logged in
-        $rootScope.$broadcast("notAuthenticated");
+        eventsService.emit("app.notAuthenticated");
 
         openLoginDialog(isLogout === undefined ? true : !isLogout);
     }
@@ -5782,8 +5830,7 @@ angular.module('umbraco.services')
                     var result = { user: data, authenticated: true, lastUserId: lastUserId };
 
                     //broadcast a global event
-                    $rootScope.$broadcast("authenticated", result);
-
+                    eventsService.emit("app.authenticated", result);
                     return result;
                 });
         },
@@ -5811,9 +5858,9 @@ angular.module('umbraco.services')
 
                         var result = { user: data, authenticated: true, lastUserId: lastUserId };
 
-                        if (args.broadcastEvent) {
+                        if (args && args.broadcastEvent) {
                             //broadcast a global event, will inform listening controllers to load in the user specific data
-                            $rootScope.$broadcast("authenticated", result);
+                            eventsService.emit("app.authenticated", result);
                         }
 
                         setCurrentUser(data);
@@ -5899,26 +5946,6 @@ function umbSessionStorage($window) {
     };
 }
 angular.module('umbraco.services').factory('umbSessionStorage', umbSessionStorage);
-
-/**
- * @ngdoc function
- * @name umbraco.services.legacyJsLoader
- * @function
- *
- * @description
- * Used to lazy load in any JS dependencies that need to be manually loaded in
- */
-function legacyJsLoader(assetsService, umbRequestHelper) {
-    return {
-        
-        /** Called to load in the legacy tree js which is required on startup if a user is logged in or 
-         after login, but cannot be called until they are authenticated which is why it needs to be lazy loaded. */
-        loadLegacyTreeJs: function(scope) {
-            return assetsService.loadJs(umbRequestHelper.getApiUrl("legacyTreeJs", "", ""), scope);
-        }  
-    };
-}
-angular.module('umbraco.services').factory('legacyJsLoader', legacyJsLoader);
 
 /**
  * @ngdoc function
@@ -6429,21 +6456,23 @@ function iconHelper($q, $timeout) {
                     for (var i = document.styleSheets.length - 1; i >= 0; i--) {
                         var classes = document.styleSheets[i].rules || document.styleSheets[i].cssRules;
                         
-                        for(var x=0;x<classes.length;x++) {
-                            var cur = classes[x];
-                            if(cur.selectorText && cur.selectorText.indexOf(c) === 0) {
-                                var s = cur.selectorText.substring(1);
-                                var hasSpace = s.indexOf(" ");
-                                if(hasSpace>0){
-                                    s = s.substring(0, hasSpace);
-                                }
-                                var hasPseudo = s.indexOf(":");
-                                if(hasPseudo>0){
-                                    s = s.substring(0, hasPseudo);
-                                }
+                        if (classes !== null) {
+                            for(var x=0;x<classes.length;x++) {
+                                var cur = classes[x];
+                                if(cur.selectorText && cur.selectorText.indexOf(c) === 0) {
+                                    var s = cur.selectorText.substring(1);
+                                    var hasSpace = s.indexOf(" ");
+                                    if(hasSpace>0){
+                                        s = s.substring(0, hasSpace);
+                                    }
+                                    var hasPseudo = s.indexOf(":");
+                                    if(hasPseudo>0){
+                                        s = s.substring(0, hasPseudo);
+                                    }
 
-                                if(collectedIcons.indexOf(s) < 0){
-                                    collectedIcons.push(s);
+                                    if(collectedIcons.indexOf(s) < 0){
+                                        collectedIcons.push(s);
+                                    }
                                 }
                             }
                         }

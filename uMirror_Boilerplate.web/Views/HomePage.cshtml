@@ -3,4 +3,12 @@
     Layout = "Root.cshtml";
 }
 
-<h2>Hej</h2>
+@Html.Partial("EditorContent")
+
+@section PromotePages{
+	<section class="site-extra promote-pages-main">
+		<div class="container">
+			@Html.Partial("PromotePagesMain")
+		</div>
+	</section>
+}

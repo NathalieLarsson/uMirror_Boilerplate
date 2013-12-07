@@ -39,6 +39,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accord">
+      <HintPath>..\packages\Accord.2.8.1.0\lib\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Imaging">
+      <HintPath>..\packages\Accord.Imaging.2.8.1.0\lib\Accord.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>..\packages\Accord.MachineLearning.2.8.1.0\lib\Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>..\packages\Accord.Math.2.8.1.0\lib\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\packages\Accord.Statistics.2.8.1.0\lib\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Vision">
+      <HintPath>..\packages\Accord.Vision.2.8.1.0\lib\Accord.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision">
+      <HintPath>..\packages\AForge.Vision.2.2.5\lib\AForge.Vision.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -63,6 +96,9 @@
     <Reference Include="CookComputing.XmlRpcV2">
       <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
+    <Reference Include="Eksponent.CropUp">
+      <HintPath>..\packages\CropUp.1.0.0.1\lib\net40\Eksponent.CropUp.dll</HintPath>
+    </Reference>
     <Reference Include="Examine">
       <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\Examine.dll</HintPath>
     </Reference>
@@ -71,6 +107,15 @@
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\packages\ImageResizer.3.4.2\lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Mvc">
+      <HintPath>..\packages\ImageResizer.Mvc.3.4.2\lib\ImageResizer.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache">
+      <HintPath>..\packages\ImageResizer.Plugins.DiskCache.3.4.2\lib\ImageResizer.Plugins.DiskCache.dll</HintPath>
     </Reference>
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\interfaces.dll</HintPath>
@@ -210,12 +255,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\dummy.txt" />
     <Content Include="App_Data\dummy.txt" />
     <Content Include="App_Data\Logs\UmbracoTraceLog.txt" />
     <Content Include="App_Data\TEMP\ClientDependency\NATHALIE-DT-f2465364548af55ec5c8102385405769-map.xml" />
     <Content Include="App_Data\Umbraco.sdf" />
-    <Content Include="App_Plugins\dummy.txt" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <Content Include="bin\amd64\sqlceca40.dll" />
@@ -236,6 +279,7 @@
     <Content Include="css\stylesheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\1001\chairs.jpg" />
     <Content Include="media\1001\chairs_big-thumb.jpg" />
@@ -246,7 +290,6 @@
     <Content Include="media\1003\bikes.jpg" />
     <Content Include="media\1003\bikes_big-thumb.jpg" />
     <Content Include="media\1003\bikes_thumb.jpg" />
-    <Content Include="media\dummy.txt" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -299,7 +342,6 @@
     <Content Include="scripts\jquery-2.0.3.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
     <Content Include="scripts\less-1.4.2.js" />
-    <Content Include="scripts\less-1.4.2.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\unislide.js" />
     <Content Include="umbraco\Actions\delete.aspx" />
@@ -2720,7 +2762,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\Cropping\SquareCrop.cs" />
+    <Compile Include="utils\DivClassHelper.cs" />
     <Compile Include="utils\editorContent.cs" />
+    <Compile Include="utils\listHelper.cs" />
     <Compile Include="utils\navigationHelper.cs" />
     <Compile Include="utils\pageHepler.cs" />
   </ItemGroup>
@@ -2946,17 +2991,11 @@
     <Content Include="less\texture.less" />
     <Content Include="less\typography.less" />
     <Content Include="less\variables.less" />
-    <Content Include="Views\Partials\_EditorContent.cshtml" />
+    <Content Include="Views\Partials\EditorContent.cshtml" />
     <Content Include="scripts\jquery-2.0.3.min.map" />
-    <Content Include="Views\Partials\_SimpelSlideshow.cshtml" />
-    <Content Include="scripts\unislide.min.js.map">
-      <DependentUpon>unislide.js</DependentUpon>
-    </Content>
-    <Content Include="scripts\main.min.js.map">
-      <DependentUpon>main.js</DependentUpon>
-    </Content>
-    <Content Include="Views\Partials\_Logotype.cshtml" />
-    <Content Include="Views\Partials\_ListThreeItems.cshtml" />
+    <Content Include="Views\Partials\SimpelSlideshow.cshtml" />
+    <Content Include="Views\Partials\PartialElements\_Logotype.cshtml" />
+    <Content Include="Views\Partials\PromotePagesMain.cshtml" />
     <Content Include="Views\Partials\PartialElements\_SearchForm.cshtml" />
     <Content Include="Views\Partials\PartialElements\_Navigation.cshtml" />
     <None Include="Web.Debug.config">
@@ -2968,10 +3007,11 @@
     <Content Include="xslt\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\preview\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
-    <Folder Include="Content\" />
+    <Folder Include="App_Plugins\" />
     <Folder Include="images\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>

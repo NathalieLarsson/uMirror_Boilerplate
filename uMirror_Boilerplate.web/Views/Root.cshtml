@@ -21,12 +21,10 @@
 	@Html.Partial("Header", root)
 
 	<section class="site-extra">
-		@Html.Partial("_SimpelSlideshow")
+		@Html.Partial("SimpelSlideshow")
 	</section>
 
-	<section class="site-extra">
-		@Html.Partial("_ListThreeItems")
-	</section>
+	@RenderSection("PromotePages", false)
 
 	<main class="site-main">
 		<div class="container">

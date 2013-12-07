@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using uMirror_Boilerplate.web.utils;
+@{
+	var root = Model.Content.AncestorOrSelf(1);
+	var promos = root.GetPropertyValue("PromotePagesMain").ToString();
+	int divId = 1;
+
+	if(!String.IsNullOrEmpty(promos)){
+		var promosList = promos.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+		var itemCollection = Umbraco.TypedContent(promosList);	
+
+		foreach (var itemId in itemCollection)
+		{
+			var divClassId = divId++;
+			string divClass = DivClassHelper.GetDivClass(divClassId);
+
+			var item = Umbraco.TypedContent(itemId.Id);
+			var title = Umbraco.GetTitle(item);
+			var intro = Umbraco.GetIntro(item);
+			var content = Umbraco.GetContent(item);
+			var date = Umbraco.GetDate(item);
+			var image = Umbraco.GetImageUrl(item);
+			var icon = Umbraco.GetIconUrl(item);
+			var media = Umbraco.TypedMedia(image);
+			var iconMedia = Umbraco.TypedMedia(icon);
+
+			string type = string.Empty;
+			if(media != null){
+				type = "type-image";
+			}else{
+				type = "type-text";
+			}
+
+			<div class="promote-item col-md-4 @type @divClass">
+				<a href="@item.Url" title="@title">
+				<div class="promote-item-header">
+					@if (iconMedia != null)
+					{
+						<img src="@iconMedia.Url" title="@title"/>
+					}
+					<h4>@title</h4>
+				</div>
+				<div class="promote-item-content">
+					@if(!String.IsNullOrEmpty(intro)){ <p>@Html.Raw(intro)</p> }
+				</div>
+				</a>
+			</div>
+		}
+	}
+}
