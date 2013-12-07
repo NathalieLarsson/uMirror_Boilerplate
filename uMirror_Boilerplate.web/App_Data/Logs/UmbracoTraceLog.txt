@@ -1844,3 +1844,5 @@ System.MissingMethodException: No parameterless constructor defined for this obj
    at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
 2013-12-07 20:49:20,049 [6] INFO  Umbraco.Core.PluginManager - [Thread 11] Starting resolution types of Umbraco.Core.PropertyEditors.PropertyEditor
 2013-12-07 20:49:20,056 [6] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of Umbraco.Core.PropertyEditors.PropertyEditor, found 33 (took 7ms)
+2013-12-07 20:50:46,341 [6] INFO  umbraco.BusinessLogic.Log - [Thread 10] Log scrubbed.  Removed all items older than 2013-10-08 20:50:46
+2013-12-07 20:50:46,342 [6] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 10] Application shutdown. Reason: ConfigurationChange
