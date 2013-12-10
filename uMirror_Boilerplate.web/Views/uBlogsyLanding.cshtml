@@ -1,0 +1,21 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Root.cshtml";
+}
+
+
+@section uBlogsyLeftCol
+{
+    <div class="uBlogsy_content_body">
+        @if (Request.QueryString.Count == 0)
+        {
+            @Umbraco.Field("uBlogsyContentBody")
+        }
+    </div>
+  
+    @*list posts*@
+    <section class="uBlogsy_posts_container">
+		@Html.CachedPartial("uBlogsy/Landing/uBlogsyLandingListPosts", Model, 0, false, false, new ViewDataDictionary(ViewData) { { "ItemsPerPage", 20 } })		
+    </section>	
+}
+

@@ -223,35 +223,45 @@
     <Reference Include="TidyNet">
       <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\TidyNet.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.dll</HintPath>
+    <Reference Include="umbraco, Version=1.0.5087.16278, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Core">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\Umbraco.Core.dll</HintPath>
+    <Reference Include="Umbraco.Core, Version=1.0.5087.16273, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\Umbraco.Core.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.DataLayer">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.DataLayer.dll</HintPath>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5087.16275, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.DataLayer.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.editorControls">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.editorControls.dll</HintPath>
+    <Reference Include="umbraco.editorControls, Version=1.0.5087.16284, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.editorControls.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.MacroEngines">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.MacroEngines.dll</HintPath>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5087.16284, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.MacroEngines.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.providers">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.providers.dll</HintPath>
+    <Reference Include="umbraco.providers, Version=1.0.5087.16277, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.providers.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Web.UI">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\Umbraco.Web.UI.dll</HintPath>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5087.16285, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\Umbraco.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.XmlSerializers">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\umbraco.XmlSerializers.dll</HintPath>
+    <Reference Include="umbraco.XmlSerializers, Version=1.0.5087.16278, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\umbraco.XmlSerializers.dll</HintPath>
     </Reference>
-    <Reference Include="UmbracoExamine">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\UmbracoExamine.dll</HintPath>
+    <Reference Include="UmbracoExamine, Version=0.6.0.16276, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\UmbracoExamine.dll</HintPath>
     </Reference>
-    <Reference Include="UrlRewritingNet.UrlRewriter">
-      <HintPath>..\packages\UmbracoCms.Core.7.0.0\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +290,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\uBlogsy_feed-icon-14x14.png" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\1001\chairs.jpg" />
     <Content Include="media\1001\chairs_big-thumb.jpg" />
@@ -290,6 +301,7 @@
     <Content Include="media\1003\bikes.jpg" />
     <Content Include="media\1003\bikes_big-thumb.jpg" />
     <Content Include="media\1003\bikes_thumb.jpg" />
+    <Content Include="media\2013-summit_sp-action-1.jpg" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -338,6 +350,10 @@
     <Content Include="less\stylesheet.less" />
     <Content Include="less\global.less" />
     <Content Include="less\_header.less" />
+    <Content Include="config\uDateFoldersy.config" />
+    <Content Include="config\uLoremsy.config" />
+    <Content Include="config\uTagsy.config" />
+    <Content Include="media\2013-summit_sp-action-1.jpg.crop.json" />
     <None Include="scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="scripts\jquery-2.0.3.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
@@ -2758,6 +2774,10 @@
     <Content Include="umbraco_client\Ui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="umbraco_client\Ui\ui-lightness\jquery-ui.custom.css" />
     <Content Include="usercontrols\dummy.txt" />
+    <Content Include="usercontrols\uBlogsy\dashboard\CreatePost.ascx" />
+    <Content Include="usercontrols\uBlogsy\dashboard\Installer.ascx" />
+    <Content Include="usercontrols\uBlogsy\dashboard\RSSImport.ascx" />
+    <Content Include="usercontrols\uTagsy\uTagsy.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2998,6 +3018,42 @@
     <Content Include="Views\Partials\PromotePagesMain.cshtml" />
     <Content Include="Views\Partials\PartialElements\_SearchForm.cshtml" />
     <Content Include="Views\Partials\PartialElements\_Navigation.cshtml" />
+    <Content Include="Views\MacroPartials\uBlogsy\uBlogsyMacroShowSomeLove.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalBrowserTitle.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalFooter.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalHeader.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalNavigation.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Global\uBlogsyGlobalSeoMeta.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Landing\uBlogsyLandingListPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Landing\uBlogsyLandingShowPost.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListAuthors.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListLabels.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListRelatedPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostListTags.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Post\uBlogsyPostShowPost.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Shared\uBlogsyShowImage.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListAuthors.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListBlogRoll.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListLabels.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPostArchive.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPosts.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListPostsForHome.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetListTags.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetSearch.cshtml" />
+    <Content Include="Views\Partials\uBlogsy\Widgets\uBlogsyWidgetShowRSSLink.cshtml" />
+    <Content Include="Views\Partials\uDateFoldersy\uDateFoldersyFolderRedirect.cshtml" />
+    <Content Include="Views\_uBlogsyBase.cshtml" />
+    <Content Include="Views\_uBlogsyBaseBlog.cshtml" />
+    <Content Include="Views\_uBlogsyBaseSite.cshtml" />
+    <Content Include="Views\uBlogsyBase.cshtml" />
+    <Content Include="Views\uBlogsyBaseBlog.cshtml" />
+    <Content Include="Views\uBlogsyBaseSite.cshtml" />
+    <Content Include="Views\uBlogsyLanding.cshtml" />
+    <Content Include="Views\uBlogsyPage.cshtml" />
+    <Content Include="Views\uBlogsyPost.cshtml" />
+    <Content Include="Views\uBlogsyRss.cshtml" />
+    <Content Include="Views\uBlogsySiteHome.cshtml" />
+    <Content Include="Views\uDateFoldersyFolderRedirect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3012,8 +3068,6 @@
     <Folder Include="App_Data\preview\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="App_Plugins\" />
-    <Folder Include="images\" />
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

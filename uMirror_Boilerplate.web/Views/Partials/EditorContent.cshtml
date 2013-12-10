@@ -23,7 +23,9 @@
 			@if (media != null)
 			{
 				<figure class="main">
-					
+					<img src="@CropUp.GetUrl("/media/2013-summit_sp-action-1.jpg", new ImageSizeArguments{ Width = 300, Height = 200 })" />
+					<img src="@CropUp.GetUrl("/media/2013-summit_sp-action-1.jpg", new ImageSizeArguments{ CropAlias = "Square", Zoom = true })" />
+					<img src="@CropUp.GetUrl("/media/2013-summit_sp-action-1.jpg", new ImageSizeArguments{ CropAlias = "Banner"})"/>
 					<img src="@media.Url" alt="@pageHeading" />
 				</figure>
 			}
@@ -37,3 +39,4 @@
 		</article>
 	}
 }
+<img src="~/media/2013-summit_sp-action-1.jpg" />
